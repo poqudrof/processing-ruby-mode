@@ -4,13 +4,36 @@ SRC_ROOT_PATH=src
 SRCDIR=$(SRC_ROOT_PATH)/processing/mode/ruby
 OUTPUT_PATH=classes
 
-DIST_PATH=~/Documents/Processing/modes/RubyMode/mode/
+DIST_PATH=$(SKETCHBOOK)/modes/RubyMode/mode/
 
 SRCS=$(wildcard $(SRCDIR)/*.java)
 
-PROCESSING_PATH=/Applications/Processing.app
-PROCESSING_CORE_JAR=$(PROCESSING_PATH)/Contents/Java/core.jar
-PROCESSING_APP_JAR=$(PROCESSING_PATH)/Contents/Java/pde.jar
+#----------------------------------------------
+# Enter Processing version here 
+PROCESSING_VERSION=2.2.1
+
+# Or
+# PROCESSING_ROOT=$(HOME)/processing-2.2.1
+#----------------------------------------------
+
+OS=$(shell uname)
+
+ifeq ($(OS), Darwin)
+	PROCESSING_PATH=/Applications/Processing.app
+	PROCESSING_CORE_JAR=$(PROCESSING_PATH)/Contents/Java/core.jar
+ 	PROCESSING_APP_JAR=$(PROCESSING_PATH)/Contents/Java/pde.jar
+else
+
+  ifndef PROCESSING_ROOT
+    PROCESSING_ROOT=$(PATH)/processing-$(PROCESSING_VERSION)
+  endif
+
+  PROCESSING_PATH=$(PROCESSING_ROOT)
+  PROCESSING_CORE_JAR=$(PROCESSING_PATH)/core/library/core.jar
+  PROCESSING_APP_JAR=$(PROCESSING_PATH)/lib/pde.jar
+endif
+
+
 
 all:	$(DIST_PATH)/$(TARGET)
 
