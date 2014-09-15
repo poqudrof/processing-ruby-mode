@@ -1,14 +1,28 @@
 Ruby Mode for PDE (Processing)
 ==============================
 
-**Working in progress**
+Fork from [tyfkda github](https://github.com/tyfkda/processing-ruby-mode)
+
+**Also Work in progress**
 
 This is additional mode for PDE, [Processing](http://www.processing.org/) IDE.
 You can write graphical application in Ruby.
-
 Code to run application is taken from [ruby-processing](https://github.com/jashkenas/ruby-processing).
 
-# Development
+# Updates from the original repository.
+
+* Linux support in the Makefile. 
+* Binary distribution.
+
+# Installation from binary. 
+
+* Download the archive [here](http://jiii.fr/git/processing-ruby-mode/RubyMode.zip).
+* Unzip it and copy the contents in the sketchbook/modes folder.
+* Restart Processing and select the mode from the IDE. 
+
+
+
+# Compilation from sources.
 ## Requirements
 * Java tools: `javac`, `jar`
 * Processing runtime jars: `core.jar`, `pde.jar`
