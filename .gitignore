@@ -2,3 +2,5 @@
 sketch.properties
 
 /RubyMode.jar
+/target/
+/RubyMode
